@@ -21,7 +21,8 @@ const readFile = (filename) => {
 };
 
 app.post("/", (req, res) => {
-    console.log("form sent data");
+  readFile("./tasks").then((tasks) => {
+    console.log(tasks);
     res.render("index", { tasks: tasks });
   });
 });
